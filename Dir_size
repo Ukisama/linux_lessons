@@ -1,0 +1,7 @@
+#!/bin/bash
+user_dirs=$(ls /home/ | cut -d" " -f10) 
+date=$(date)
+for user in $user_dirs;
+do
+echo "Сегодня $date размер вашей директории составляет $(du -sh /home/$user)" >> /home/$user/Dir_size.txt
+done
